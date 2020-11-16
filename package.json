@@ -1,0 +1,19 @@
+{
+  "name": "mongodb-basics",
+  "version": "1.0.0",
+  "description": "Basics of MongoDB to learn how MongoDB works",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhavartha/MongoBasics.git"
+  },
+  "author": "Bhavartha Khawale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bhavartha/MongoBasics/issues"
+  },
+  "homepage": "https://github.com/Bhavartha/MongoBasics"
+}
