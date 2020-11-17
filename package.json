@@ -4,7 +4,7 @@
   "description": "Basics of MongoDB to learn how MongoDB works",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -t 15000"
   },
   "repository": {
     "type": "git",

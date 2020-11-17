@@ -2,10 +2,9 @@ const assert = require('assert')
 const Users = require('../models/userModel')
 
 // Describe tests
-describe("Saving users to db", () => {
+describe("Finding records from db", () => {
 
-    // Create tests
-    it('Saves record to db', (done) => {
+    beforeEach((done) => {
         var u = new Users({
             name: 'Z',
             age: 19
@@ -16,5 +15,14 @@ describe("Saving users to db", () => {
             assert(!u.isNew)
             done()
         })
+    })
+
+    // Create tests
+    it('Finds one record from db', (done) => {
+        Users.findOne({ name: 'Z' })
+            .then((result) => {
+                assert(result.name === 'Z')
+                done()
+            })
     })
 })

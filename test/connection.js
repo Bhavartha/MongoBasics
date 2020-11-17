@@ -18,11 +18,18 @@ mongoose.set('useUnifiedTopology', true);
 before((done) => {
     mongoose.connect(uri)
     mongoose.connection
-        .once('open', () => console.log("Connection established"))
+        .once('open', () => {
+            console.log("Connection established")
+            done()
+        })
         .on('error', (e) => console.log(e))
-    done()
 })
 
+// Drop the collection before each test
+beforeEach((done) => {
+    // Drop users collection
+    mongoose.connection.collections.users.drop(() => done())
+})
 
 // Close connection after running all tests
-after(()=> mongoose.connection.close())
+after(() => mongoose.connection.close())
