@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Bhavartha/MongoBasics",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "mocha": "^8.2.1",
     "mongoose": "^5.10.14"
   }
 }
