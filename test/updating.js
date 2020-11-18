@@ -2,7 +2,7 @@ const assert = require('assert')
 const Users = require('../models/userModel')
 
 // Describe tests
-describe("Deleting records from db", () => {
+describe("Updating records in db", () => {
 
     let u
 
@@ -16,11 +16,11 @@ describe("Deleting records from db", () => {
     })
 
     // Create tests
-    it('Deletes one record from db', (done) => {
-        Users.findOneAndRemove({ name: 'Z' })
+    it('Update one record in db', (done) => {
+        Users.findOneAndUpdate({ name: 'Z' }, { name: 'SZ' })
             .then(() => {
-                Users.findOne({ name: 'Z' }).then((result) => {
-                    assert(result === null)
+                Users.findOne({ _id: u._id }).then((result) => {
+                    assert(result.name === 'SZ')
                     done()
                 })
             })

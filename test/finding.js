@@ -12,11 +12,7 @@ describe("Finding records from db", () => {
             age: 19
         })
 
-        u.save().then(() => {
-            // not New = saved to db
-            assert(!u.isNew)
-            done()
-        })
+        u.save().then(() => done())
     })
 
     // Create tests
