@@ -26,4 +26,13 @@ describe("Updating records in db", () => {
             })
     })
 
+    it('Increments age by 1', (done) => {
+        Users.updateMany({}, { $inc: { age: 1 } })
+            .then(() => {
+                Users.findOne({ _id: u._id }).then((result) => {
+                    assert(result.age === u.age+1)
+                    done()
+                })
+            })
+    })
 })
