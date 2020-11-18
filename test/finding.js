@@ -4,8 +4,10 @@ const Users = require('../models/userModel')
 // Describe tests
 describe("Finding records from db", () => {
 
+    let u
+
     beforeEach((done) => {
-        var u = new Users({
+        u = new Users({
             name: 'Z',
             age: 19
         })
@@ -22,6 +24,14 @@ describe("Finding records from db", () => {
         Users.findOne({ name: 'Z' })
             .then((result) => {
                 assert(result.name === 'Z')
+                done()
+            })
+    })
+
+    it('Finds record using id', (done) => {
+        Users.findOne({ _id: u._id })
+            .then((result) => {
+                assert(result._id.toString() === u._id.toString())
                 done()
             })
     })
